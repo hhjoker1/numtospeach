@@ -47,19 +47,6 @@ public enum SpokenNumber {
     }
 
     /**
-     * Returns the spoken german word of the enumeration constant
-     * with the given index, or an empty {@link String} if the
-     * constant was not found.
-     *
-     * @param index the index to be looked for
-     * @return the spoken german word or an empty {@link String}
-     */
-    public static String getSpokenOf(int index) {
-        SpokenNumber spokenNumber = spokenCache.get(index);
-        return spokenNumber != null ? spokenNumber.getSpoken() : "";
-    }
-
-    /**
      * The index of the spoken word.
      */
     private final int index;
@@ -77,6 +64,19 @@ public enum SpokenNumber {
     SpokenNumber(int index, String spoken) {
         this.index = index;
         this.spoken = spoken;
+    }
+
+    /**
+     * Returns the spoken german word of the enumeration constant
+     * with the given index, or an empty {@link String} if the
+     * constant was not found.
+     *
+     * @param index the index to be looked for
+     * @return the spoken german word or an empty {@link String}
+     */
+    public static String getSpokenOf(int index) {
+        SpokenNumber spokenNumber = spokenCache.get(index);
+        return spokenNumber != null ? spokenNumber.getSpoken() : "";
     }
 
     /**

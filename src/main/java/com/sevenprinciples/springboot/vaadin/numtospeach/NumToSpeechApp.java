@@ -10,6 +10,11 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
  */
 @SpringBootApplication
 public class NumToSpeechApp {
+
+    private NumToSpeechApp() {
+        // App must not be instantiated by other classes
+    }
+
     public static void main(String[] args) {
         SpringApplication.run(NumToSpeechApp.class, args);
     }

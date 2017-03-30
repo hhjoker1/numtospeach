@@ -7,6 +7,7 @@ import com.sevenprinciples.springboot.vaadin.numtospeach.conversion.GroupNumberE
  *
  * Created by joachim.kaesser on 15.01.2017.
  */
+@FunctionalInterface
 public interface GroupConversionRule {
     /**
      * Applies the rule.

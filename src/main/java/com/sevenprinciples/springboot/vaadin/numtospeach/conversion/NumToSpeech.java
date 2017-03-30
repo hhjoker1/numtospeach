@@ -1,5 +1,7 @@
 package com.sevenprinciples.springboot.vaadin.numtospeach.conversion;
 
+import java.security.acl.Group;
+
 /**
  * Converts a String to german speech.
  * @author jka
@@ -15,9 +17,9 @@ public class NumToSpeech {
      *
      * @param strNumber the Number as a String to be converted to speech
      * @return the String in spoken german words (the speech)
-     * @throws NumberFormatException thrown if the number contains illegal characters
+     * @throws GroupNumberException thrown if the number contains illegal characters
      */
-    public String toSpeech(String strNumber) throws NumberFormatException {
+    public String toSpeech(String strNumber) throws GroupNumberException {
         return null;
     }
 
