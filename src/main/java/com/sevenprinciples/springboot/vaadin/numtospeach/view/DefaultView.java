@@ -9,6 +9,8 @@ import com.vaadin.ui.VerticalLayout;
 import javax.annotation.PostConstruct;
 
 /**
+ * The num2speech default view.
+ * @author jka
  * Created by joachim.kaesser on 14.01.2017.
  */
 @SpringView(name = DefaultView.VIEW_NAME)

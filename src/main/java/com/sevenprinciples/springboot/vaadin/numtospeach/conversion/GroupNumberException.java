@@ -17,7 +17,7 @@ public class GroupNumberException extends Exception {
 
     /**
      * Constructor taking a text message.
-     * @param message the messsage describing the cause of the excpetion
+     * @param message the message describing the cause of the exception
      */
     public GroupNumberException(String message) {
         super(message);
@@ -25,7 +25,7 @@ public class GroupNumberException extends Exception {
 
     /**
      * Constructor taking a message and a cause.
-     * @param message the message descriging the cause of the exception
+     * @param message the message describing the cause of the exception
      * @param cause the cause as a {@link Throwable}
      */
     public GroupNumberException(String message, Throwable cause) {

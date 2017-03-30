@@ -9,6 +9,8 @@ import com.vaadin.ui.VerticalLayout;
 import javax.annotation.PostConstruct;
 
 /**
+ * The scoped view.
+ * @author jka
  * Created by joachim.kaesser on 14.01.2017.
  */
 @SpringView(name = ViewScopedView.VIEW_NAME)

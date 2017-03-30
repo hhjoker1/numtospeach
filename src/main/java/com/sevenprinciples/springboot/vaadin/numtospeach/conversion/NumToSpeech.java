@@ -1,6 +1,8 @@
 package com.sevenprinciples.springboot.vaadin.numtospeach.conversion;
 
 /**
+ * Converts a String to german speech.
+ * @author jka
  * Created by joachim.kaesser on 14.01.2017.
  */
 public class NumToSpeech {

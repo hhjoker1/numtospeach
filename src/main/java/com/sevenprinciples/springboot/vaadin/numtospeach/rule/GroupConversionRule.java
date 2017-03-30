@@ -10,10 +10,10 @@ import com.sevenprinciples.springboot.vaadin.numtospeach.conversion.GroupNumberE
 public interface GroupConversionRule {
     /**
      * Applies the rule.
-     * @param groupNumber the {@link Integer} number to apply the rule on
+     * @param groupNumber the {@link String} number to apply the rule on
      * @return the resulting {@link String} value
-     * @throws GroupNumberException if groupNumber doesn't follow conventions for goup conversion
+     * @throws GroupNumberException if groupNumber doesn't follow conventions for group conversion
      */
-    String apply(Integer groupNumber) throws GroupNumberException;
+    String apply(String groupNumber) throws GroupNumberException;
 
 }

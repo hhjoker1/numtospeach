@@ -10,6 +10,8 @@ import com.vaadin.ui.*;
 import com.vaadin.ui.themes.ValoTheme;
 
 /**
+ * The num2speech view.
+ * @author jka
  * Created by joachim.kaesser on 14.01.2017.
  */
 @Theme("valo")

@@ -14,6 +14,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.assertThat;
 
 /**
+ * Test cases for the GroupToSpeech class.
+ * @author  jka
  * Created by joachim.kaesser on 15.01.2017.
  */
 @RunWith(Parameterized.class)
@@ -52,8 +54,8 @@ public class GroupToSpeechTest {
      * and the class of the exception, if expected.
      *
      * @param numberToConvert the group number represented as an {@link Integer}
-     * @param expectedResult the excpected result or null, if an {@link Exception} is expected
-     * @param expectedExceptionClazz the excpected {@link Exception} class or null, if not expected
+     * @param expectedResult the expected result or null, if an {@link Exception} is expected
+     * @param expectedExceptionClazz the expected {@link Exception} class or null, if not expected
      */
     public GroupToSpeechTest(Integer numberToConvert, String expectedResult, Class<Exception> expectedExceptionClazz) {
         this.numberToConvert = numberToConvert;
@@ -125,7 +127,7 @@ public class GroupToSpeechTest {
 
     /**
      * Setup for the test case.
-     * @throws Exception
+     * @throws Exception if setup has been failed
      */
     @Before
     public void setUp() throws Exception {
@@ -134,7 +136,7 @@ public class GroupToSpeechTest {
 
     /**
      * Tears down the test case.
-     * @throws Exception
+     * @throws Exception if tearing down has been failed
      */
     @After
     public void tearDown() throws Exception {
@@ -143,7 +145,7 @@ public class GroupToSpeechTest {
 
     /**
      * Performs the test case.
-     * @throws Exception
+     * @throws Exception if test cas has been failed
      */
     @Test
     public void toSpeech() throws Exception {

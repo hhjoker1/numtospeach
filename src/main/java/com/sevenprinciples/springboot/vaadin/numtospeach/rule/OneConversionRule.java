@@ -10,29 +10,29 @@ import com.sevenprinciples.springboot.vaadin.numtospeach.conversion.SpokenNumber
 public class OneConversionRule extends GroupConversionBaseRule {
 
     @Override
-    public String apply(Integer groupNumber) throws GroupNumberException {
-        if (groupNumber == null) {
-            throw new GroupNumberException("GroupNumber must not be null!");
-        }
+    public String apply(String groupNumber) throws GroupNumberException {
+
 
         StringBuilder result = new StringBuilder();
         result.append(super.apply(groupNumber));
 
-        if (groupNumber.equals(0)) {
+        Integer groupNum = parseGroupNumber(groupNumber);
+
+        if (groupNum.equals(0)) {
             result.append(SpokenNumber.getSpokenOf(0));
         } else {
-            if (groupNumber.equals(11) || groupNumber.equals(12)) {
+            if (groupNum.equals(11) || groupNum.equals(12)) {
                 return ""; // will be transformed by TenConversionRule
             }
-            Integer one = groupNumber > 9 ? groupNumber % 10 : groupNumber;
+            Integer one = groupNum > 9 ? groupNum % 10 : groupNum;
             String spokenOfOne = SpokenNumber.getSpokenOf(one);
             
-            if (groupNumber <= 9) {
+            if (groupNum <= 9) {
                 spokenOfOne = capitalize(spokenOfOne);
             }
             result.append(spokenOfOne);
 
-            Boolean tenIsZero = Integer.toString(groupNumber / 10).endsWith("0");
+            Boolean tenIsZero = Integer.toString(groupNum / 10).endsWith("0");
             if (tenIsZero && one.equals(1)) {
                 result.append("s");
             }
@@ -43,9 +43,9 @@ public class OneConversionRule extends GroupConversionBaseRule {
     }
 
     private String capitalize(String spokenOfOne) {
-        StringBuffer capitalized = new StringBuffer();
-        capitalized.append(spokenOfOne.substring(0,1).toUpperCase()).append(spokenOfOne.substring(1, spokenOfOne.length()));
-        return capitalized.toString();
+        return ""
+                + spokenOfOne.substring(0,1).toUpperCase()
+                + spokenOfOne.substring(1, spokenOfOne.length());
     }
     
 }

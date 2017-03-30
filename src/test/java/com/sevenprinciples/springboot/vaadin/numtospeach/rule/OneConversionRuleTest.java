@@ -16,6 +16,8 @@ import static org.hamcrest.CoreMatchers.is;
 import static org.junit.Assert.*;
 
 /**
+ * Parameterized test for the 'one conversion rule'.
+ * @author jka
  * Created by joachim.kaesser on 15.01.2017.
  */
 @RunWith(Parameterized.class)
@@ -25,9 +27,9 @@ public class OneConversionRuleTest {
     public ExpectedException expectedException = ExpectedException.none();
 
     /**
-     * The group number paramter.
+     * The group number parameter.
      */
-    private Integer groupNumber;
+    private String groupNumber;
 
     /**
      * The expected result parameter.
@@ -35,17 +37,17 @@ public class OneConversionRuleTest {
     private String expectedResult;
 
     /**
-     * The class of the excpected exception.
+     * The class of the expected exception.
      */
     private Class<Exception> expectedExceptionClazz;
 
     /**
      * Constructor
-     * @param groupNumber
-     * @param expectedResult
-     * @param expectedExceptionClazz
+     * @param groupNumber the group number
+     * @param expectedResult the excpected result
+     * @param expectedExceptionClazz the excpected exception
      */
-    public OneConversionRuleTest(Integer groupNumber, String expectedResult, Class<Exception> expectedExceptionClazz) {
+    public OneConversionRuleTest(String groupNumber, String expectedResult, Class<Exception> expectedExceptionClazz) {
         this.groupNumber = groupNumber;
         this.expectedResult = expectedResult;
         this.expectedExceptionClazz = expectedExceptionClazz;
@@ -59,25 +61,31 @@ public class OneConversionRuleTest {
     public static Collection<Object[]> data() {
         return Arrays.asList(new Object[][]{
                         // regular cases
-                        {0, "Null", null},
-                        {1, "Eins", null},
-                        {11, "", null}, // 'elf' will be provided by the 'TenConversionRule' instance
-                        {12, "", null}, // 'zwölf' will be provided by the 'TenConversionRule' instance
-                        {101, "eins", null},
-                        {21, "ein", null},
-                        {2, "Zwei", null},
-                        {3, "Drei", null},
-                        {4, "Vier", null},
-                        {5, "Fünf", null},
-                        {6, "Sechs", null},
-                        {7, "Sieben", null},
-                        {8, "Acht", null},
-                        {9, "Neun", null},
+                        {"0", "Null", null},
+                        {"1", "Eins", null},
+                        {"11", "", null}, // 'elf' will be provided by the 'TenConversionRule' instance
+                        {"12", "", null}, // 'zwölf' will be provided by the 'TenConversionRule' instance
+                        {"101", "eins", null},
+                        {"21", "ein", null},
+                        {"2", "Zwei", null},
+                        {"3", "Drei", null},
+                        {"4", "Vier", null},
+                        {"5", "Fünf", null},
+                        {"6", "Sechs", null},
+                        {"7", "Sieben", null},
+                        {"8", "Acht", null},
+                        {"9", "Neun", null},
 
                         // exceptional cases
-                        {-1, null, GroupNumberException.class},
+                        {"", null, GroupNumberException.class},
+                        {"a", null, GroupNumberException.class},
+                        {"ab", null, GroupNumberException.class},
+                        {"abc", null, GroupNumberException.class},
+                        {"1a", null, GroupNumberException.class},
+                        {"b2", null, GroupNumberException.class},
+                        {"-1", null, GroupNumberException.class},
                         {null, null, GroupNumberException.class},
-                        {1000, null, GroupNumberException.class},
+                        {"1000", null, GroupNumberException.class},
                 }
         );
     }
