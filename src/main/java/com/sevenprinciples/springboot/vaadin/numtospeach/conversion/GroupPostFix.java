@@ -48,9 +48,9 @@ public enum GroupPostFix {
 
     /**
      * Constructor taking the groupIndex, spoken text an an additional plural extension.
-     * @param groupIndex
-     * @param spoken
-     * @param pluralPostfix
+     * @param groupIndex the group index
+     * @param spoken the string in spoken language
+     * @param pluralPostfix the plural postfix
      */
     GroupPostFix(int groupIndex, String spoken, String pluralPostfix) {
         this.groupIndex = groupIndex;

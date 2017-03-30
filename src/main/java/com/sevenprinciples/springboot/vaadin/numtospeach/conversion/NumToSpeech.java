@@ -1,7 +1,5 @@
 package com.sevenprinciples.springboot.vaadin.numtospeach.conversion;
 
-import java.security.acl.Group;
-
 /**
  * Converts a String to german speech.
  * @author jka
